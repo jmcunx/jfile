@@ -1,5 +1,5 @@
 .\" 
-.\" Copyright (c) 2014 2015 2016 2017 2018 
+.\" Copyright (c) 2014 2015 2016 ... 2021 2022
 .\"     John McCue <jmccue@jmcunx.com>
 .\" 
 .\" Permission to use, copy, modify, and distribute this software for any
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\" 
-.TH jfile 1 "$Date: 2018/06/24 14:35:01 $" "JMC" "User Commands"
+.TH jfile 1 "2018/06/24" "JMC" "User Commands"
 .SH NAME
 jfile - Display Characters Statistics of a Text File
 .SH SYNOPSIS
@@ -97,17 +97,22 @@ If desired, a detail report can be generated for
 each character examined.
 The report is formatted as:
 .nf
+
+    Byte Record Pos Char Hex              Type (ASCII/UTF-8 ...)
+    ---- ------ --- ---- ---------------- -----------------------
+
     Byte      = character position in the file
     Record    = Record Number where the character is found, assumes
                 each record is separated by a new-line (0x0a)
     Pos       = Position in the Record of the character
     Char      = Character.  If it is a UTF-8 character, a string of
                 '*' will be shown were each '*' represents one byte
+		(see '-p' above)
     Hex       = Hexadecimal representation of the character
     Type ...  = Describes the Type of the character
 .fi
 .PP
-This table shows how to determine a UTF-8 character:
+This table shows how it determines a UTF-8 characters.
 .nf
     .--------+---------------------------------------------------.
     | Type   | Byte 1     | Byte 2     | Byte 3     | Byte 4     |
@@ -140,17 +145,20 @@ this utility will still be able to flag problematic characters.
 .PP
 Arguments -v, -7, -8 and -U can generate a large output file.
 This is because each line shows details about the character found.
+.SH BUGS
+Probably, but this will be able to determine
+if a Text File contains unexpected encodings.
 .SH SEE-ALSO
 ascii(7),
 file(1),
 hexdump(1),
+iconv(1),
 jascii(1),
 jhd(1),
 magic(5),
 od(1),
 strings(1)
-
-.SH ERROR-CODES
+ ERROR-CODES
 .nf
 0 success
 1 processing error or help/rev displayed

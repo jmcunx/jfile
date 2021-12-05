@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 2014 2015 ...2020 2021
+ * Copyright (c) 2013 2014 2015 ...2021 2022
  *     John McCue <jmccue@jmcunx.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
@@ -15,7 +15,9 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#ifndef _MSDOS
 #include <sys/param.h>
+#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -25,8 +27,6 @@
 #include <j_lib2m.h>
 
 #include "jfile.h"
-
-char *jfile_u_c="$Id: jfile_u.c,v 2.4 2021/02/21 19:53:16 jmccue Exp $";
 
 /*
  * open_in() -- open in file
@@ -142,5 +142,3 @@ void init_finfo(struct s_file_info *f)
   f->fname = (char *) NULL;
 
 } /* init_finfo() */
-
-/* jfile_u.c */

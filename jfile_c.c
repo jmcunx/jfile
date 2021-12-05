@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 2014 2015 ... 2020 2021
+ * Copyright (c) 2013 2014 2015 ... 2021 2022
  *     John McCue <jmccue@jmcunx.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
@@ -15,7 +15,9 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#ifndef _MSDOS
 #include <sys/param.h>
+#endif
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
@@ -26,8 +28,6 @@
 #include <j_lib2m.h>
 
 #include "jfile.h"
-
-char *jfile_c_c="$Id: jfile_c.c,v 2.4 2021/02/21 19:53:16 jmccue Exp $";
 
 /*** prototypes ***/
 void load_utf(char *, size_t, size_t, struct s_utf_split *);
@@ -429,5 +429,3 @@ void load_utf(char *buf, size_t pos, size_t max_size, struct s_utf_split *u)
     }
 
 } /* load_utf() */
-
-/* END: jfile_c.c */

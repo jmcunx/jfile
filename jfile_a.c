@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 2014 2015 ... 2020 2021
+ * Copyright (c) 2013 2014 2015 ... 2021 2022
  *     John McCue <jmccue@jmcunx.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
@@ -15,7 +15,9 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#ifndef _MSDOS
 #include <sys/param.h>
+#endif
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -28,8 +30,6 @@
 #include "jfile.h"
 
 #define SIZ_ARG_FMT 80
-
-char *jfile_a_c="$Id: jfile_a.c,v 2.5 2021/02/21 19:53:16 jmccue Exp $";
 
 /*
  * init_get_delm() -- translate a string into a delimiter
@@ -183,5 +183,3 @@ void process_arg(int argc, char **argv, struct s_work *w)
     (w->num_files)++;  /* stdin when no files */
 
 } /* process_arg() */
-
-/* jfile_a.c */

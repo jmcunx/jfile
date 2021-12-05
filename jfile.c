@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 2014 2015 ... 2020 2021 
+ * Copyright (c) 2013 2014 2015 ... 2021 2022
  *     John McCue <jmccue@jmcunx.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
@@ -15,18 +15,23 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#ifndef _MSDOS
+#include <sys/param.h>
+#endif
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 #include <errno.h>
 #include <stdlib.h>
 #include <unistd.h>
+#ifdef OpenBSD
+#include <err.h>
+#endif
+
 #include <j_lib2.h>
 #include <j_lib2m.h>
 
 #include "jfile.h"
-
-char *jfile_c="$Id: jfile.c,v 2.5 2021/02/21 19:53:16 jmccue Exp $";
 
 #define MAX_FMT_CHAR 5
 
@@ -431,5 +436,3 @@ int has_bom(char *buf)
   return((int) FALSE);
 
 } /* has_bom() */
-
-/* END: jfile.c */

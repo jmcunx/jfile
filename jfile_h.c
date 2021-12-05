@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 2014 2015 ... 2020 2021
+ * Copyright (c) 2013 2014 2015 ... 2021 2022
  *     John McCue <jmccue@jmcunx.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
@@ -23,15 +23,6 @@
 #include <j_lib2m.h>
 
 #include "jfile.h"
-
-char *jfile_h_c="$Id: jfile_h.c,v 2.5 2021/02/21 19:53:16 jmccue Exp $";
-
-extern char *jfile_c;
-extern char *jfile_c_c;
-extern char *jfile_a_c;
-extern char *jfile_h_c;
-extern char *jfile_i_c;
-extern char *jfile_u_c;
 
 #define MSG_HELP_11  "Show Text File Character Statistics"
 
@@ -68,27 +59,15 @@ int show_brief_help(FILE *fp, char *pname)
 
 }  /* show_brief_help() */
 
-/******************************************************************************
-* show_rev()
-******************************************************************************/
+/*
+ * show_rev()
+ */
 int show_rev(FILE *fp, char *pname)
 
 {
 
   fprintf(fp,"%s %s:\n", pname, LIT_REV);
-  fprintf(fp,"\t%s\n", JFILE_H);
-  fprintf(fp,"\t%s\n", jfile_c);
-  fprintf(fp,"\t%s\n", jfile_a_c);
-  fprintf(fp,"\t%s\n", jfile_c_c);
-  fprintf(fp,"\t%s\n", jfile_h_c);
-  fprintf(fp,"\t%s\n", jfile_i_c);
-  fprintf(fp,"\t%s\n", jfile_u_c);
-  fprintf(fp,"\t%s\n", J_LIB2_H);
-  fprintf(fp,"\t     %s %s\n", LIT_INFO_02, j2_get_build());
-
-#ifdef J_LIB2M_H
-  fprintf(fp, "\t%s\n", J_LIB2M_H);
-#endif
+  fprintf(fp,"\t%s %s\n", LIT_INFO_02, j2_get_build());
 
 #ifdef OSTYPE
   fprintf(fp,"\t%s\n",OSTYPE);
@@ -101,5 +80,3 @@ int show_rev(FILE *fp, char *pname)
   return(EXIT_FAILURE);
 
 }  /* show_rev() */
-
-/* END: jfile_h.c */

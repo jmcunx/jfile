@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 2014 2015 ... 2020 2021
+ * Copyright (c) 2013 2014 2015 ... 2021 2022
  *     John McCue <jmccue@jmcunx.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
@@ -17,7 +17,7 @@
 
 #ifndef JFILE_H
 
-#define JFILE_H "$Id: jfile.h,v 2.3 2020/06/14 18:31:09 jmccue Exp $"
+#define JFILE_H "INCLUDED"
 
 #define PROG_NAME  "jfile"
 
@@ -103,5 +103,3 @@ void show_utf(struct s_work *, struct s_counts *, char *, size_t, size_t, long i
 int  utf_split(char *, size_t, size_t, struct s_utf_split *);
 
 #endif /*  JFILE_H  */
-
-/******************************* END: jfile.h ********************************/
