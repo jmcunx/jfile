@@ -158,7 +158,6 @@ install:	all
 	$(INSTALLD) $(READINS)
 	$(INSTALLB) jfile $(PRODUCTION)
 	$(INSTALLT) jfile.1$(CNROFF) $(PRODMAN)
-	$(INSTALLT) README.txt $(READINS)
 	@echo DONE
 
 clean:
