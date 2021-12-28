@@ -119,7 +119,7 @@ void process_a_file(struct s_work *w, char *fname, char **buf, size_t *bsize)
   if ( ! open_in(&fp, fname, w->err.fp) )
     return;
 
-  while ((cbytes = getline(buf, bsize, fp)) > (ssize_t) -1)
+  while ((cbytes = j2_getline(buf, bsize, fp)) > (ssize_t) -1)
     {
       fcount.lines_read++;
       fcount.bytes_read += cbytes;
